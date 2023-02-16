@@ -1,7 +1,5 @@
-import { Home } from "./pages/Home"
+import { AllRoutes } from "./routes";
 
-const App = () => {
-  return <Home />;
-};
+const App = () => <AllRoutes />;
 
 export { App };

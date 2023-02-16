@@ -4,9 +4,16 @@ import { Input } from "../../components/Input";
 import { useForm } from "react-hook-form";
 import { api } from "../../services/api";
 import { Container } from "./style";
+import { useState } from "react";
 import * as yup from "yup";
 
-const Home = () => {
+interface IHome {
+  setUser: React.Dispatch<React.SetStateAction<object>>;
+}
+
+const Home = ({ setUser }: IHome) => {
+  const [load, setLoad] = useState<boolean>(false);
+
   const schema = yup.object().shape({
     owner: yup.string().required("Campo obrogatório"),
   });
@@ -20,10 +27,13 @@ const Home = () => {
   });
 
   const onSubmitFunc = (data: any) => {
+    setLoad(true);
+
     api
       .get(`${data.owner}/repos`)
-      .then((res) => console.log(res.data))
-      .catch((error) => console.error(error));
+      .then((res) => setUser(res.data))
+      .catch((error) => console.error(error))
+      .finally(() => setLoad(false));
   };
 
   return (
@@ -51,8 +61,8 @@ const Home = () => {
             required={true}
           />
 
-          <Button color="colorHome" size="home" type="submit">
-            Ver perfil do github
+          <Button color="colorHome" size="home" type="submit" disabled={load}>
+            {load ? "Procurando..." : "Ver perfil do github"}
           </Button>
         </form>
       </div>
