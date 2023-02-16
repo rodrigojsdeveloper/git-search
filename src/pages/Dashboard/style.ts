@@ -5,6 +5,7 @@ const Container = styled.div`
   max-width: 800px;
 
   margin: 0 auto;
+  padding: 20px;
 
   & > div {
     display: flex;
@@ -31,6 +32,12 @@ const Container = styled.div`
       & > h2 {
         font-size: 1.5rem;
         font-weight: 600;
+
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -39,6 +46,20 @@ const Container = styled.div`
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    & > div {
+      flex-direction: column;
+
+      & > div {
+        margin-bottom: 20px;
+      }
+    }
+
+    & > menu {
+      justify-content: center;
+    }
   }
 `;
 

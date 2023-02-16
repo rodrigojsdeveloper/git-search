@@ -1,4 +1,5 @@
 import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 import { Card } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
@@ -9,17 +10,25 @@ interface IDashboard {
 }
 
 const Dashboard = ({ user }: IDashboard) => {
+  const token = sessionStorage.getItem("Git Search: username");
+
+  const navigate = useNavigate();
+
   const [repos, setRepos] = useState<Array<boolean>>([]);
 
   const [load, setLoad] = useState<boolean>(false);
 
   useEffect(() => {
     api
-      .get(`${user.login}/repos`)
+      .get(`${token}/repos`)
       .then((res) => setRepos(res.data))
       .catch((error) => console.error(error))
       .finally(() => setLoad(false));
   }, []);
+
+  if (!token) {
+    return navigate("/");
+  }
 
   return (
     <Container>
@@ -32,7 +41,11 @@ const Dashboard = ({ user }: IDashboard) => {
         <Button
           color="colorDashboard"
           size="dashboard"
-          onClick={() => history.back()}
+          onClick={() => {
+            history.back();
+
+            sessionStorage.removeItem("Git Search: name");
+          }}
         >
           Trocar usuário
         </Button>

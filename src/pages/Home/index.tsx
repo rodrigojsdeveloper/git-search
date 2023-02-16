@@ -37,6 +37,8 @@ const Home = ({ setUser }: IHome) => {
       .then((res) => {
         setUser(res.data);
 
+        sessionStorage.setItem("Git Search: username", res.data.login);
+
         navigate("/dashboard");
       })
       .catch((error) => console.error(error))
