@@ -42,10 +42,21 @@ const Container = styled.div`
   & > div:nth-child(2) {
     background-color: var(--color-grey-2);
 
-    & > h2 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 45px;
+    & > form {
+      width: 100%;
+      max-width: 315px;
+      height: 198px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      & > h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 45px;
+      }
     }
   }
 `;

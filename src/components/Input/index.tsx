@@ -11,7 +11,6 @@ interface InputProps {
   error?: any;
   required?: boolean | undefined;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  disabled?: boolean;
 }
 
 const Input = ({
@@ -23,7 +22,6 @@ const Input = ({
   placeholder,
   required,
   onChange,
-  disabled,
   label,
 }: InputProps) => {
   return (
@@ -39,7 +37,6 @@ const Input = ({
         placeholder={placeholder}
         required={required}
         onChange={onChange}
-        disabled={disabled}
       />
     </Container>
   );
