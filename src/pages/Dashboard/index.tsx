@@ -2,6 +2,7 @@ import { Button } from "../../components/Button";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./style";
+import { Card } from "../../components/Card";
 
 interface IDashboard {
   user: any;
@@ -37,7 +38,12 @@ const Dashboard = ({ user }: IDashboard) => {
         </Button>
       </div>
 
-      <menu></menu>
+      <menu>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </menu>
     </Container>
   );
 };

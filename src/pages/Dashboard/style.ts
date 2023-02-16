@@ -34,6 +34,12 @@ const Container = styled.div`
       }
     }
   }
+
+  & > menu {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export { Container };
