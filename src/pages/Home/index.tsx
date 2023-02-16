@@ -1,6 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { api } from "../../services/api";
 import { Container } from "./style";
@@ -12,6 +13,8 @@ interface IHome {
 }
 
 const Home = ({ setUser }: IHome) => {
+  const navigate = useNavigate();
+
   const [load, setLoad] = useState<boolean>(false);
 
   const schema = yup.object().shape({
@@ -30,8 +33,12 @@ const Home = ({ setUser }: IHome) => {
     setLoad(true);
 
     api
-      .get(`${data.owner}/repos`)
-      .then((res) => setUser(res.data))
+      .get(`${data.owner}`)
+      .then((res) => {
+        setUser(res.data);
+
+        navigate("/dashboard");
+      })
       .catch((error) => console.error(error))
       .finally(() => setLoad(false));
   };

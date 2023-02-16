@@ -6,7 +6,6 @@ interface IButtonStyled {
 }
 
 const Container = styled.button<IButtonStyled>`
-  width: 100%;
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
@@ -29,6 +28,7 @@ const Container = styled.button<IButtonStyled>`
         return css`
           height: 38px;
           max-width: 315px;
+          width: 100%;
         `;
 
       case "dashboard":
@@ -55,12 +55,12 @@ const Container = styled.button<IButtonStyled>`
 
       case "colorDashboard":
         return css`
-          background-color: var(--color-grey-4);
-          border: 1.5px solid var(--color-grey-4);
+          background-color: var(--color-grey-3);
+          border: 1.5px solid var(--color-grey-3);
 
           :hover {
-            background-color: var(--color-grey-5);
-            border: 1.5px solid var(--color-grey-5);
+            background-color: var(--color-grey-4);
+            border: 1.5px solid var(--color-grey-4);
           }
         `;
 
