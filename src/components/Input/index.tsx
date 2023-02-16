@@ -1,17 +1,5 @@
-import { FieldValues, UseFormRegister } from "react-hook-form";
 import { Container, InputContainer } from "./style";
-
-interface InputProps {
-  type?: React.HTMLInputTypeAttribute;
-  name: string;
-  autoComplete?: string;
-  placeholder?: string;
-  register: UseFormRegister<FieldValues>;
-  label?: string;
-  error?: any;
-  required?: boolean | undefined;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-}
+import { InputProps } from "../../interfaces";
 
 const Input = ({
   type,

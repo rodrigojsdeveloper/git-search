@@ -1,8 +1,5 @@
+import { ICard } from "../../interfaces";
 import { Container } from "./style";
-
-interface ICard {
-  repo: any;
-}
 
 const Card = ({ repo }: ICard) => {
   return (

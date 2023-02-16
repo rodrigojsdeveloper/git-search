@@ -1,20 +1,17 @@
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
+import { IDashboard, IRepo } from "../../interfaces";
 import { Card } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./style";
-
-interface IDashboard {
-  user: any;
-}
 
 const Dashboard = ({ user }: IDashboard) => {
   const token = sessionStorage.getItem("Git Search: username");
 
   const navigate = useNavigate();
 
-  const [repos, setRepos] = useState<Array<boolean>>([]);
+  const [repos, setRepos] = useState<Array<IRepo>>([]);
 
   const [load, setLoad] = useState<boolean>(false);
 
@@ -52,7 +49,7 @@ const Dashboard = ({ user }: IDashboard) => {
       </div>
 
       <menu>
-        {repos.map((repo) => (
+        {repos.map((repo: IRepo) => (
           <Card repo={repo} />
         ))}
       </menu>

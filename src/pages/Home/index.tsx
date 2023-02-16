@@ -4,13 +4,10 @@ import { Input } from "../../components/Input";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { api } from "../../services/api";
+import { IHome } from "../../interfaces";
 import { Container } from "./style";
 import { useState } from "react";
 import * as yup from "yup";
-
-interface IHome {
-  setUser: React.Dispatch<React.SetStateAction<object>>;
-}
 
 const Home = ({ setUser }: IHome) => {
   const navigate = useNavigate();
