@@ -17,7 +17,7 @@ const InputContainer = styled.input`
   background-color: var(--grey-1);
   border: 1px solid var(--grey-3);
   border-radius: var(--shadow-1);
-  color: var(--color-grey-8);
+  color: var(--color-grey-7);
   margin-bottom: 18px;
   padding-left: 12px;
 `;
