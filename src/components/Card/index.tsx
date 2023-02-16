@@ -1,14 +1,19 @@
 import { Container } from "./style";
-import { Link } from "react-router-dom";
 
-const Card = () => {
+interface ICard {
+  repo: any;
+}
+
+const Card = ({ repo }: ICard) => {
   return (
     <Container>
-      <h3>Olá</h3>
+      <h3>{repo.name}</h3>
 
-      <p>null</p>
+      <p>{repo.description}</p>
 
-      <Link to="">Repositório</Link>
+      <a href={repo.html_url} target="_blank">
+        Repositório
+      </a>
     </Container>
   );
 };

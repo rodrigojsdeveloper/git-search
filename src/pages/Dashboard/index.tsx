@@ -1,8 +1,8 @@
 import { Button } from "../../components/Button";
+import { Card } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./style";
-import { Card } from "../../components/Card";
 
 interface IDashboard {
   user: any;
@@ -39,10 +39,9 @@ const Dashboard = ({ user }: IDashboard) => {
       </div>
 
       <menu>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {repos.map((repo) => (
+          <Card repo={repo} />
+        ))}
       </menu>
     </Container>
   );
