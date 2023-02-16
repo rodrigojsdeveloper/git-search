@@ -8,13 +8,15 @@ interface IButtonStyled {
 const Container = styled.button<IButtonStyled>`
   width: 100%;
   border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   transition: 0.5s;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  color: var(--color-grey-7);
 
   :disabled {
     opacity: 0.5;

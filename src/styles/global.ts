@@ -25,8 +25,8 @@ export default createGlobalStyle`
   }
 
 	body {
-    background-color: var(--color-base-default);
-    color: var(--color-title);
+    background-color: var(--color-grey-2);
+    color: var(--color-grey-7);
 	}
 
 	button, a {
