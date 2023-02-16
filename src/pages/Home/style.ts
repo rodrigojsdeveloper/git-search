@@ -12,6 +12,8 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
   }
 
   & > div:nth-child(1) {
@@ -56,6 +58,27 @@ const Container = styled.div`
         font-size: 1.25rem;
         font-weight: 500;
         margin-bottom: 45px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    & > div {
+      width: 100%;
+      height: 50vh;
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+
+    & > div:nth-child(1) {
+      & > div {
+        & > p {
+          font-size: 1rem;
+        }
       }
     }
   }
