@@ -20,6 +20,8 @@ export default createGlobalStyle`
     --color-grey-6: #A6A8A9;
     --color-grey-7: #D9D9D9;
     --color-grey-8: #FFFFFF;
+		--shadow-1: rgba(255, 255, 255, 0.12);
+		--shadow-2: rgba(255, 255, 255, 0.5);
   }
 
 	body {
