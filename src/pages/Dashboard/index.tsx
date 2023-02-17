@@ -23,9 +23,11 @@ const Dashboard = ({ user }: IDashboard) => {
       .finally(() => setLoad(false));
   }, []);
 
-  if (!token) {
-    return navigate("/");
-  }
+  useEffect(() => {
+    if (!token) {
+      return navigate("/");
+    }
+  }, []);
 
   return (
     <Container>
