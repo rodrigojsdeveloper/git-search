@@ -1,6 +1,6 @@
+import { IDashboard, IRepo } from "../../interfaces";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-import { IDashboard, IRepo } from "../../interfaces";
 import { Card } from "../../components/Card";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
@@ -16,6 +16,8 @@ const Dashboard = ({ user }: IDashboard) => {
   const [load, setLoad] = useState<boolean>(false);
 
   useEffect(() => {
+    setLoad(true);
+
     api
       .get(`${token}/repos`)
       .then((res) => setRepos(res.data))
