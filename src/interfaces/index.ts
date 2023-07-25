@@ -9,6 +9,11 @@ export interface IButton {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+export interface IButtonStyled {
+  color: string;
+  size: string;
+}
+
 export interface InputProps {
   name: string;
   register: UseFormRegister<FieldValues>;
