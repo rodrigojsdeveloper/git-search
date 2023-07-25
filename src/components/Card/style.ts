@@ -7,7 +7,6 @@ const Container = styled.div`
 
   padding: 40px 20px;
   border: 2px solid var(--color-grey-3);
-  border-radius: 4px;
 
   display: flex;
   flex-direction: column;
@@ -25,8 +24,8 @@ const Container = styled.div`
   }
 
   & > h3 {
-    font-size: 1.25rem;
     font-weight: 500;
+    font-size: 1.25rem;
 
     -webkit-line-clamp: 1;
   }
@@ -34,24 +33,24 @@ const Container = styled.div`
   & > p {
     font-weight: 400;
     font-size: 1rem;
+    line-height: 20px;
     color: var(--color-grey-5);
 
     -webkit-line-clamp: 2;
   }
 
   & > a {
-    border-radius: 4px;
     padding: 8px;
 
-    background-color: transparent;
-    border: 1px solid var(--color-grey-6);
     color: var(--color-grey-7);
+    background-color: var(--transparent);
+    border: 1px solid var(--color-grey-6);
 
     transition: 0.5s;
 
     :hover {
-      background-color: var(--color-brand-2);
       border-color: var(--color-brand-2);
+      background-color: var(--color-brand-2);
     }
   }
 `;

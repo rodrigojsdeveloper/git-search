@@ -1,3 +1,4 @@
+import { sortByMostRecent } from "../../utils/formatDate";
 import { IDashboard, IRepo } from "../../interfaces";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -31,6 +32,8 @@ const Dashboard = ({ user }: IDashboard) => {
     }
   }, []);
 
+  const formattedRepos: IRepo[] = sortByMostRecent(repos);
+
   return (
     <Container>
       <div>
@@ -45,7 +48,7 @@ const Dashboard = ({ user }: IDashboard) => {
           onClick={() => {
             history.back();
 
-            sessionStorage.removeItem("Git Search: name");
+            sessionStorage.removeItem("Git Search: username");
           }}
         >
           Trocar usuário
@@ -53,8 +56,8 @@ const Dashboard = ({ user }: IDashboard) => {
       </div>
 
       <menu>
-        {repos.map((repo: IRepo) => (
-          <Card repo={repo} />
+        {formattedRepos.map((repo: IRepo) => (
+          <Card repo={repo} key={repo.id} />
         ))}
       </menu>
     </Container>

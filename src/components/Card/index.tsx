@@ -6,7 +6,7 @@ const Card = ({ repo }: ICard) => {
     <Container>
       <h3>{repo.name}</h3>
 
-      <p>{repo.description ? repo.description : "null"}</p>
+      <p>{repo.description ? repo.description : "Sem descrição"}</p>
 
       <a href={repo.html_url} target="_blank">
         Repositório

@@ -1,30 +1,20 @@
 import { Container, InputContainer } from "./style";
 import { InputProps } from "../../interfaces";
 
-const Input = ({
-  type,
-  name,
-  register,
-  autoComplete,
-  error,
-  placeholder,
-  required,
-  onChange,
-  label,
-}: InputProps) => {
+const Input = ({ name, register, error, onClick }: InputProps) => {
   return (
     <Container>
       <label>
-        {label} {!!error && <span> - {error}</span>}
+        Usuário GitHub {!!error && <span> - Usuário não encontrado</span>}
       </label>
 
       <InputContainer
-        type={type}
+        type="text"
         {...register(name)}
-        autoComplete={autoComplete}
-        placeholder={placeholder}
-        required={required}
-        onChange={onChange}
+        autoComplete="off"
+        placeholder="Digite um usuário do github aqui..."
+        required={true}
+        onClick={onClick}
       />
     </Container>
   );

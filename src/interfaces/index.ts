@@ -10,15 +10,11 @@ export interface IButton {
 }
 
 export interface InputProps {
-  type?: React.HTMLInputTypeAttribute;
   name: string;
-  autoComplete?: string;
-  placeholder?: string;
   register: UseFormRegister<FieldValues>;
   label?: string;
   error?: any;
-  required?: boolean | undefined;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export interface IUser {

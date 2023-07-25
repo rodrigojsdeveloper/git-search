@@ -14,15 +14,13 @@ const Home = ({ setUser }: IHome) => {
 
   const [load, setLoad] = useState<boolean>(false);
 
+  const [error, setError] = useState<boolean>(false);
+
   const schema = yup.object().shape({
-    owner: yup.string().required("Campo obrogatório"),
+    owner: yup.string().required("Campo obrigatório"),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -38,7 +36,11 @@ const Home = ({ setUser }: IHome) => {
 
         navigate("/dashboard");
       })
-      .catch((error) => console.error(error))
+      .catch((error) => {
+        setError(true);
+
+        console.error(error);
+      })
       .finally(() => setLoad(false));
   };
 
@@ -59,12 +61,8 @@ const Home = ({ setUser }: IHome) => {
           <Input
             name="owner"
             register={register}
-            autoComplete="off"
-            error={errors.owner?.message}
-            label="Usuário github"
-            type="text"
-            placeholder="Digite um usuário do github aqui..."
-            required={true}
+            error={error}
+            onClick={() => setError(false)}
           />
 
           <Button color="colorHome" size="home" type="submit" disabled={load}>

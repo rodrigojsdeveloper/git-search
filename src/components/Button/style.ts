@@ -6,7 +6,6 @@ interface IButtonStyled {
 }
 
 const Container = styled.button<IButtonStyled>`
-  border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
   transition: 0.5s;
@@ -33,7 +32,7 @@ const Container = styled.button<IButtonStyled>`
 
       case "dashboard":
         return css`
-          padding: 8px 16px;
+          padding: 12px 16px;
         `;
 
       default:
