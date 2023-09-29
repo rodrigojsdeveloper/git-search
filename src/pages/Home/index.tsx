@@ -46,15 +46,15 @@ const Home = ({ setUser }: IHome) => {
 
   return (
     <Container>
-      <div>
-        <div>
+      <div className="header">
+        <div className="header-container">
           <h1>Git Search</h1>
 
           <p>Encontre e se conecte com profissionais de forma rápida e fácil</p>
         </div>
       </div>
 
-      <div>
+      <div className="main">
         <form onSubmit={handleSubmit(onSubmitFunc)}>
           <h2>Procurar por um usuário</h2>
 

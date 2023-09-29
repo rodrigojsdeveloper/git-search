@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: row;
 
@@ -16,32 +16,34 @@ const Container = styled.div`
     padding: 20px;
   }
 
-  & > div:nth-child(1) {
+  & > .header {
     background-color: var(--color-brand-1);
 
-    & > div {
+    & > .header-container {
       width: 100%;
-      max-width: 384px;
-      height: 127px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      max-width: 431px;
 
       & > h1 {
-        font-size: 2rem;
         font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+
+        margin-bottom: 37px;
       }
 
       & > p {
-        font-size: 1.25rem;
         font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+
+        @media (max-width: 425px) {
+          font-size: 16px;
+        }
       }
     }
   }
 
-  & > div:nth-child(2) {
+  & > .main {
     background-color: var(--color-grey-2);
 
     & > form {
@@ -58,7 +60,7 @@ const Container = styled.div`
         font-weight: 500;
         font-size: 20px;
         line-height: 30px;
-        
+
         margin-bottom: 45px;
       }
     }
@@ -70,18 +72,6 @@ const Container = styled.div`
     & > div {
       width: 100%;
       height: 50vh;
-    }
-  }
-
-  @media (max-width: 425px) {
-    flex-direction: column;
-
-    & > div:nth-child(1) {
-      & > div {
-        & > p {
-          font-size: 1rem;
-        }
-      }
     }
   }
 `;
