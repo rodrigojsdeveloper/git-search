@@ -1,4 +1,4 @@
-import { IRepo } from "../interfaces";
+import { IRepoProps } from "../interfaces";
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -8,7 +8,7 @@ function formatDate(dateString: string): string {
   return formattedDate;
 }
 
-function sortByMostRecent(repos: IRepo[]): IRepo[] {
+function sortByMostRecent(repos: IRepoProps[]): IRepoProps[] {
   const currentDate = new Date();
   repos.sort((repo1, repo2) => {
     const diff1 = Math.abs(

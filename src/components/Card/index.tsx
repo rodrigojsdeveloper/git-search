@@ -1,7 +1,7 @@
-import { ICard } from "../../interfaces";
+import { IRepo } from "../../interfaces";
 import { Container } from "./style";
 
-const Card = ({ repo }: ICard) => {
+const Card = ({ repo }: IRepo) => {
   return (
     <Container>
       <h3>{repo.name}</h3>

@@ -1,5 +1,5 @@
 import { sortByMostRecent } from "../../utils/formatDate";
-import { IDashboard, IRepo } from "../../interfaces";
+import { IUser, IRepoProps } from "../../interfaces";
 import { Button } from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { Card } from "../../components/Card";
@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./style";
 
-const Dashboard = ({ user }: IDashboard) => {
+const Dashboard = ({ user }: IUser) => {
   const token = sessionStorage.getItem("Git Search: username");
 
   const navigate = useNavigate();
 
-  const [repos, setRepos] = useState<Array<IRepo>>([]);
+  const [repos, setRepos] = useState<Array<IRepoProps>>([]);
 
   const [load, setLoad] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ const Dashboard = ({ user }: IDashboard) => {
     }
   }, []);
 
-  const formattedRepos: IRepo[] = sortByMostRecent(repos);
+  const formattedRepos: IRepoProps[] = sortByMostRecent(repos);
 
   return (
     <Container>
@@ -56,7 +56,7 @@ const Dashboard = ({ user }: IDashboard) => {
       </div>
 
       <menu>
-        {formattedRepos.map((repo: IRepo) => (
+        {formattedRepos.map((repo) => (
           <Card repo={repo} key={repo.id} />
         ))}
       </menu>

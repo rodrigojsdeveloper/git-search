@@ -22,7 +22,7 @@ export interface InputProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export interface IUser {
+export interface IUserProps {
   login: string;
   id: number;
   node_id: string;
@@ -57,7 +57,7 @@ export interface IUser {
   updated_at: string;
 }
 
-export interface IRepo {
+export interface IRepoProps {
   id: number;
   node_id: string;
   name: string;
@@ -139,14 +139,14 @@ export interface IRepo {
   default_branch: string;
 }
 
-export interface ICard {
-  repo: IRepo;
+export interface IRepo {
+  repo: IRepoProps;
 }
 
-export interface IDashboard {
-  user: IUser;
+export interface IUser {
+  user: IUserProps;
 }
 
 export interface IHome {
-  setUser: React.Dispatch<React.SetStateAction<IUser>>;
+  setUser: React.Dispatch<React.SetStateAction<IUserProps>>;
 }

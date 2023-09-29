@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 784px;
 
-  margin: 0 auto;
   padding: 20px;
+  margin: 0 auto;
 
   & > div {
     display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    padding: 65px 0;
+    padding: 61px 0 70px;
 
     & > div {
       display: flex;
@@ -43,9 +43,9 @@ const Container = styled.div`
   }
 
   & > menu {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 381px));
+    grid-gap: 22px;
   }
 
   @media (max-width: 768px) {
@@ -58,6 +58,10 @@ const Container = styled.div`
     }
 
     & > menu {
+      grid-template-columns: repeat(1, minmax(0px, 381px));
+
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
     }
   }
