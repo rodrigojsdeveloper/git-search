@@ -13,6 +13,7 @@ export default createGlobalStyle`
   :root {
     --color-brand-1: #C2255C;
     --color-brand-2: #D6336C;
+		--color-brand-active: #7d2644;
 
     --color-grey-1: #191C1F;
     --color-grey-2: #212529;
@@ -20,7 +21,7 @@ export default createGlobalStyle`
     --color-grey-4: #373B3E;
     --color-grey-5: #A6A8A9;
     --color-grey-6: #D9D9D9;
-    --color-grey-7: #FFFFFF;
+    --color-white: #FFFFFF;
 
 		--color-red: red;
 		
@@ -31,12 +32,13 @@ export default createGlobalStyle`
   }
 
 	body {
+		color: var(--color-white);
     background-color: var(--color-grey-2);
-    color: var(--color-grey-7);
 	}
 
 	button, a {
 		cursor: pointer;
+  	transition: 0.5s;
 	}
 
 	a {

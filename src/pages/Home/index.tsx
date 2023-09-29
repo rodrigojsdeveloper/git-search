@@ -65,7 +65,7 @@ const Home = ({ setUser }: IHome) => {
             onClick={() => setError(false)}
           />
 
-          <Button color="colorHome" size="home" type="submit" disabled={load}>
+          <Button color="pink" type="submit" disabled={load}>
             {load ? "Procurando..." : "Ver perfil do github"}
           </Button>
         </form>

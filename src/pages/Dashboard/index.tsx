@@ -43,8 +43,8 @@ const Dashboard = ({ user }: IDashboard) => {
         </div>
 
         <Button
-          color="colorDashboard"
-          size="dashboard"
+          color="grey"
+          size="169px"
           onClick={() => {
             history.back();
 

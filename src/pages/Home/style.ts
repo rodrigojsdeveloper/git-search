@@ -55,8 +55,10 @@ const Container = styled.div`
       align-items: flex-start;
 
       & > h2 {
-        font-size: 1.25rem;
         font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        
         margin-bottom: 45px;
       }
     }

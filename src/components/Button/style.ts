@@ -1,59 +1,60 @@
-import { IButtonStyled } from "../../interfaces";
+import { IButtonStyle } from "../../interfaces";
 import styled, { css } from "styled-components";
 
-const Container = styled.button<IButtonStyled>`
-  font-weight: 500;
-  font-size: 16px;
-  transition: 0.5s;
+const Container = styled.button<IButtonStyle>`
+  width: 100%;
+  height: 38px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  color: var(--color-grey-7);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-white);
 
-  :disabled {
+  &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
   ${({ size }) => {
     switch (size) {
-      case "home":
+      case "169px":
         return css`
-          height: 38px;
-          max-width: 315px;
-          width: 100%;
-        `;
-
-      case "dashboard":
-        return css`
-          padding: 12px 16px;
+          max-width: 169px;
         `;
 
       default:
         return false;
     }
   }}
+
   ${({ color }) => {
     switch (color) {
-      case "colorHome":
+      case "pink":
         return css`
           background-color: var(--color-brand-1);
           border: 1.5px solid var(--color-brand-1);
 
-          :hover {
+          &:hover {
             background-color: var(--color-brand-2);
             border: 1.5px solid var(--color-brand-2);
           }
+
+          &:active {
+            background-color: var(--color-brand-active);
+            border: 1.5px solid var(--color-brand-active);
+          }
         `;
 
-      case "colorDashboard":
+      case "grey":
         return css`
           background-color: var(--color-grey-3);
           border: 1.5px solid var(--color-grey-3);
 
-          :hover {
+          &:hover {
             background-color: var(--color-grey-4);
             border: 1.5px solid var(--color-grey-4);
           }

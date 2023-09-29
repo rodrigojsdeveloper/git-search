@@ -2,18 +2,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 360px;
-  height: 212px;
+  max-width: 381px;
+  height: 243px;
 
-  padding: 40px 20px;
+  padding: 41px 27px;
   border: 2px solid var(--color-grey-3);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  margin-bottom: 20px;
 
   & > h3,
   & > p {
@@ -25,30 +18,35 @@ const Container = styled.div`
 
   & > h3 {
     font-weight: 500;
-    font-size: 1.25rem;
+    font-size: 20px;
+    line-height: 24.2px;
 
     -webkit-line-clamp: 1;
+    margin-bottom: 21px;
   }
 
   & > p {
+    height: 63px;
+
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 21px;
     color: var(--color-grey-5);
 
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
+    margin-bottom: 27px;
   }
 
   & > a {
     padding: 8px;
 
-    color: var(--color-grey-7);
+    color: var(--color-white);
     background-color: var(--transparent);
     border: 1px solid var(--color-grey-6);
 
     transition: 0.5s;
 
-    :hover {
+    &:hover {
       border-color: var(--color-brand-2);
       background-color: var(--color-brand-2);
     }

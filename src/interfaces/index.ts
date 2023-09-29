@@ -1,17 +1,17 @@
 import { FieldValues, UseFormRegister } from "react-hook-form";
 
-export interface IButton {
+export interface IButtonProps {
   children: React.ReactNode;
-  color: string;
-  size: string;
+  color: "pink" | "grey";
+  size?: "169px";
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export interface IButtonStyled {
-  color: string;
-  size: string;
+export interface IButtonStyle {
+  color: "pink" | "grey";
+  size?: "169px";
 }
 
 export interface InputProps {
