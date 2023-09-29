@@ -1,35 +1,53 @@
-# Git Search
-Git Search permite encontrar qualquer usuário existente no GitHub e ver/acessar seus respectivos repositórios.
+<div align="center">
+<h1>Git Search</h1>
 
-## 1. Instalando dependências
+<p>Git Search facilita encontrar usuários do GitHub e seus repositórios.</p>
+</div>
+<br />
 
-Na raiz do projeto, abra o terminal e digite
+## Clonando o Repositório
+
+Você pode clonar este repositório usando o seguinte comando:
+
+```
+git clone https://github.com/rodrigojsdeveloper/git-search.git
+```
+
+## Gerenciador de Pacotes
+
+Este projeto utiliza o Yarn como gerenciador de pacotes. Certifique-se de tê-lo instalado antes de prosseguir. Se ainda não o possui, você pode baixá-lo <a href="https://classic.yarnpkg.com/lang/en/docs/install">aqui</a>.
+
+### Aviso:
+
+Embora o Yarn seja o gerenciador de pacotes recomendado, você também pode usar o NPM executando os seguintes comandos:
+
+- Para instalar as dependências: npm install
+- Para iniciar o Git Search: npm run dev
+
+## Instalação das Dependências
+
+Para instalar as dependências do projeto, abra o terminal na raiz e execute o seguinte comando:
 
 ```
 yarn
 ```
 
-## 2. Iniciando o Git Search
+## Iniciando o Git Search
 
-Na raiz do projeto, abra o terminal e digite
+Para iniciar o projeto, execute o seguinte comando no terminal:
 
 ```
 yarn dev
 ```
 
-### Acessando Git Search na web
+### Acesso ao Git Search no Vercel
+
+Você pode acessar a aplicação Git Search no seguinte link:
 
 ```
 https://git-search-beta.vercel.app/
 ```
 
-## Desenvolvedor
-
-<div>
-	<a href="https://www.linkedin.com/in/rodrigo-de-jesus-silva">
-		<img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-	</a>
-	<a href="mailto:rodrigojsdeveloper@gmail.com" rel="noreferrer" target="_blank">
-		<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Link to my Gmail" />
-	</a>
-</div>
+<br/>
+<p align="center">Desenvolvido por <a href="https://www.linkedin.com/in/rodrigo-de-jesus-silva/">Rodrigo Silva</a>
+</p>
