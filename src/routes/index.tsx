@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Dashboard } from "../pages/Dashboard";
+import { NotFound } from "../pages/NotFound";
 import { IUser } from "../interfaces";
 import { Home } from "../pages/Home";
 import { useState } from "react";
@@ -9,8 +10,9 @@ const AllRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Home setUser={setUser} />} />
       <Route path="/dashboard" element={<Dashboard user={user} />} />
+      <Route path="/" element={<Home setUser={setUser} />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
