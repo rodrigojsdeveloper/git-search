@@ -40,14 +40,6 @@ Para iniciar o projeto, execute o seguinte comando no terminal:
 yarn dev
 ```
 
-### Acesso ao Git Search no Vercel
-
-Você pode acessar a aplicação Git Search no seguinte link:
-
-```
-https://git-search-beta.vercel.app/
-```
-
 <br/>
 <p align="center">Desenvolvido por <a href="https://www.linkedin.com/in/rodrigo-de-jesus-silva/">Rodrigo Silva</a>
 </p>
